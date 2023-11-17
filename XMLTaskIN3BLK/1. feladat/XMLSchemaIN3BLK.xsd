@@ -8,7 +8,7 @@
     <xs:element name="Szabad" type="xs:string" />
     <xs:element name="Nev" type="xs:string" />
     <xs:element name="Telefon" type="TelefonszamTipus" />
-    <xs:element name="Fizetes" type="xs:integer" />
+    <xs:element name="Ber" type="xs:integer" />
     <xs:element name="Beosztas" type="xs:string" />
     <xs:element name="Cim" type="xs:string" />
     <xs:element name="Irszam" type="IranyitoszamTipus" />
@@ -54,7 +54,7 @@
         <xs:sequence>
             <xs:element name="Nev" type="xs:string" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
-            <xs:element name="Fizetes" type="xs:integer" />
+            <xs:element name="Ber" type="xs:integer" />
             <xs:element name="Beosztas" type="xs:string" />
         </xs:sequence>
     </xs:complexType>

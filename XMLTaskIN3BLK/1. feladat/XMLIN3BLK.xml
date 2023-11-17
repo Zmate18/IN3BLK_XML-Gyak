@@ -25,7 +25,7 @@
     <Alkalmazott a_kod="1" h_kod="1">
         <Nev>Tóth András</Nev>
         <Telefon>06-70-938-5617</Telefon>
-        <Fizetes>320000</Fizetes>
+        <Ber>320000</Ber>
         <Beosztas>Portás</Beosztas>
     </Alkalmazott>
 
@@ -33,14 +33,14 @@
         <Nev>Lakatos Kevin</Nev>
         <Telefon>06-30-294-7335</Telefon>
         <Telefon>06-20-993-3744</Telefon>
-        <Fizetes>390000</Fizetes>
+        <Ber>390000</Ber>
         <Beosztas>Szakács</Beosztas>
     </Alkalmazott>
 
     <Alkalmazott a_kod="3" h_kod="3">
         <Nev>Szabó Ilona</Nev>
         <Telefon>06-70-223-9485</Telefon>
-        <Fizetes>280000</Fizetes>
+        <Ber>280000</Ber>
         <Beosztas>Takarító</Beosztas>
     </Alkalmazott>
 
@@ -150,3 +150,4 @@
         <Datum>2022-05-14</Datum>
         <Fizetesmod>Bankkártya</Fizetesmod>
     </Fizetes>
+</IN3BLK_Foglalas>
