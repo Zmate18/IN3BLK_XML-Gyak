@@ -8,9 +8,9 @@ import java.util.StringJoiner;
 
 public class DomReadIN3BLK {
 
-	public static void main(String[] args) {
-		try {
-			// XML fájl beolvasáss
+    public static void main(String[] args) {
+        try {
+            // XML fájl beolvasáss
             File inputFile = new File("XMLIN3BLK.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -31,8 +31,7 @@ public class DomReadIN3BLK {
                 Node attribute = rootAttributeMap.item(i);
                 rootAttributes.add(attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
             }
-            
-            
+
             System.out.print("<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n");
             writer.print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 
@@ -79,10 +78,10 @@ public class DomReadIN3BLK {
             e.printStackTrace();
         }
 
-	}
-	
-	// NodeList tartalmának kiírása
-	private static void printNodeList(NodeList nodeList, PrintWriter writer) {
+    }
+
+    // NodeList tartalmának kiírása
+    private static void printNodeList(NodeList nodeList, PrintWriter writer) {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
             printNode(node, 1, writer);
@@ -91,19 +90,19 @@ public class DomReadIN3BLK {
         }
     }
 
-	// Node tartalmának kiírása
+    // Node tartalmának kiírása
     private static void printNode(Node node, int indent, PrintWriter writer) {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
             String nodeName = element.getTagName();
             StringJoiner attributes = new StringJoiner(" ");
             NamedNodeMap attributeMap = element.getAttributes();
-            
+
             for (int i = 0; i < attributeMap.getLength(); i++) {
                 Node attribute = attributeMap.item(i);
                 attributes.add(attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
             }
-            
+
             System.out.print(getIndentString(indent));
             System.out.print("<" + nodeName + " " + attributes.toString() + ">");
             writer.print(getIndentString(indent));
@@ -112,11 +111,11 @@ public class DomReadIN3BLK {
             NodeList children = element.getChildNodes();
             // Ellenőrzi, hogy az elemnek csak egy szöveges tartalma van-e
             if (children.getLength() == 1 && children.item(0).getNodeType() == Node.TEXT_NODE) {
-            	//  Ha csak egy szöveges tartalom van, akkor kiíratja
+                // Ha csak egy szöveges tartalom van, akkor kiíratja
                 System.out.print(children.item(0).getNodeValue());
                 writer.print(children.item(0).getNodeValue());
             } else {
-            	// Ha több gyerek eleme van, akkor új sor karaktereket és behúzást ad hozzá
+                // Ha több gyerek eleme van, akkor új sor karaktereket és behúzást ad hozzá
                 System.out.println();
                 writer.println();
                 for (int i = 0; i < children.getLength(); i++) {
@@ -135,7 +134,7 @@ public class DomReadIN3BLK {
     private static String getIndentString(int indent) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < indent; i++) {
-        	// Minden iteráció során két szóközt fűz hozzá a StringBuilderhez.
+            // Minden iteráció során két szóközt fűz hozzá a StringBuilderhez.
             sb.append("  ");
         }
         return sb.toString();
