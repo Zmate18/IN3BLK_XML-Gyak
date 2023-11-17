@@ -10,16 +10,18 @@ public class DomReadIN3BLK {
 
 	public static void main(String[] args) {
 		try {
-            File xmlFile = new File("XMLIN3BLK.xml");
+			// XML fájl beolvasáss
+            File inputFile = new File("XMLIN3BLK.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(xmlFile);
+            Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
 
+            // Mentés fájlba
             File outputFile = new File("ReadOutput.xml");
             PrintWriter writer = new PrintWriter(new FileWriter(outputFile, true));
 
-            // Kiírjuk az XML főgyökér elemét a konzolra és fájlba
+            // XML gyökér elemének kiíratása a konzolra és fájlba
             Element rootElement = doc.getDocumentElement();
             String rootName = rootElement.getTagName();
             StringJoiner rootAttributes = new StringJoiner(" ");
@@ -45,7 +47,7 @@ public class DomReadIN3BLK {
             NodeList foglalasList = doc.getElementsByTagName("Foglalas");
             NodeList fizetesList = doc.getElementsByTagName("Fizetes");
 
-            // Kiírjuk az XML-t a konzolra megtartva az eredeti formázást
+            // XML kiírása az eredeti formában
             System.out.println("");
             writer.println("");
             printNodeList(szobaList, writer);
@@ -68,7 +70,7 @@ public class DomReadIN3BLK {
             writer.println("");
             printNodeList(fizetesList, writer);
 
-            // Zárjuk le az XML gyökér elemét
+            // XML gyökér elemének lezárása
             System.out.println("</" + rootName + ">");
             writer.append("</" + rootName + ">");
 
@@ -79,7 +81,7 @@ public class DomReadIN3BLK {
 
 	}
 	
-	// Rekurzív függvény a NodeList tartalmának kiírására
+	// NodeList tartalmának kiírása
 	private static void printNodeList(NodeList nodeList, PrintWriter writer) {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
@@ -89,29 +91,32 @@ public class DomReadIN3BLK {
         }
     }
 
+	// Node tartalmának kiírása
     private static void printNode(Node node, int indent, PrintWriter writer) {
-        // Ha a node egy szöveg node, akkor kiírjuk a tartalmát
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
             String nodeName = element.getTagName();
             StringJoiner attributes = new StringJoiner(" ");
             NamedNodeMap attributeMap = element.getAttributes();
-            // Kiírjuk az elem nevét és attribútumait
+            
             for (int i = 0; i < attributeMap.getLength(); i++) {
                 Node attribute = attributeMap.item(i);
                 attributes.add(attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
             }
-            // Kiírjuk az elem tartalmát
+            
             System.out.print(getIndentString(indent));
             System.out.print("<" + nodeName + " " + attributes.toString() + ">");
             writer.print(getIndentString(indent));
             writer.print("<" + nodeName + " " + attributes.toString() + ">");
 
             NodeList children = element.getChildNodes();
+            // Ellenőrzi, hogy az elemnek csak egy szöveges tartalma van-e
             if (children.getLength() == 1 && children.item(0).getNodeType() == Node.TEXT_NODE) {
+            	//  Ha csak egy szöveges tartalom van, akkor kiíratja
                 System.out.print(children.item(0).getNodeValue());
                 writer.print(children.item(0).getNodeValue());
             } else {
+            	// Ha több gyerek eleme van, akkor új sor karaktereket és behúzást ad hozzá
                 System.out.println();
                 writer.println();
                 for (int i = 0; i < children.getLength(); i++) {
@@ -126,10 +131,11 @@ public class DomReadIN3BLK {
 
     }
 
+    // Egy segédmetódus, amely egy behúzó sztringet hoz létre
     private static String getIndentString(int indent) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < indent; i++) {
-            // A szóközök száma, amivel indentálunk
+        	// Minden iteráció során két szóközt fűz hozzá a StringBuilderhez.
             sb.append("  ");
         }
         return sb.toString();
