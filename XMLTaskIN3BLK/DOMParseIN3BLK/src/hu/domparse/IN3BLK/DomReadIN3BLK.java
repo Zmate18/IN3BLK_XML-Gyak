@@ -10,15 +10,15 @@ public class DomReadIN3BLK {
 
     public static void main(String[] args) {
         try {
-            // XML fájl beolvasáss
-            File inputFile = new File("XMLIN3BLK.xml");
+            // XML fájl beolvasása
+            File inputFile = new File("XMLTaskIN3BLK\\DOMParseIN3BLK\\XMLIN3BLK.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
 
             // Mentés fájlba
-            File outputFile = new File("ReadOutput.xml");
+            File outputFile = new File("XMLTaskIN3BLK\\DOMParseIN3BLK\\ReadOutput.xml");
             PrintWriter writer = new PrintWriter(new FileWriter(outputFile, true));
 
             // XML gyökér elemének kiíratása a konzolra és fájlba

@@ -13,8 +13,8 @@ public class DomModifyIN3BLK {
 
 	public static void main(String[] args) {
 		try {
-			// XML fájl beolvasáss
-			File inputFile = new File("IN3BLK_XML-Gyak\\XMLTaskIN3BLK\\DOMParseIN3BLK\\XMLIN3BLK.xml");
+			// XML fájl beolvasása
+			File inputFile = new File("XMLTaskIN3BLK\\DOMParseIN3BLK\\XMLIN3BLK.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(inputFile);
