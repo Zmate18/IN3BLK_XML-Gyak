@@ -20,16 +20,19 @@ public class DomQueryIN3BLK {
             NodeList hotelList = doc.getElementsByTagName("Hotel");
             System.out.println("1. Lekérdezés:");
 
+            // Hotel elemek bejárása
             for (int i = 0; i < hotelList.getLength(); i++) {
                 Element hotelElement = (Element) hotelList.item(i);
                 String h_kod = hotelElement.getAttribute("h_kod");
 
+                // Ha a hotel kódja 1, akkor kiírja a hotel adatait
                 if ("1".equals(h_kod)) {
                     System.out.println("Az 1-es ID-val rendelkező hotel adatai:");
                     System.out.println("Név: " + hotelElement.getElementsByTagName("Nev").item(0).getTextContent());
                     System.out.println(
                             "Telefon: " + hotelElement.getElementsByTagName("Telefon").item(0).getTextContent());
 
+                    // Cím elem lekérdezése
                     Element cimElement = (Element) hotelElement.getElementsByTagName("Cim").item(0);
                     if (cimElement != null) {
                         System.out.println("Cím: " +
@@ -55,6 +58,7 @@ public class DomQueryIN3BLK {
                 Element alkalmazottElement = (Element) alkalmazottList.item(i);
                 int ber = Integer.parseInt(alkalmazottElement.getElementsByTagName("Ber").item(0).getTextContent());
 
+                // Ha a bér több, mint 300000, akkor kiírja az alkalmazott nevét
                 if (ber > 300000) {
                     String nev = alkalmazottElement.getElementsByTagName("Nev").item(0).getTextContent();
                     System.out.println(nev);

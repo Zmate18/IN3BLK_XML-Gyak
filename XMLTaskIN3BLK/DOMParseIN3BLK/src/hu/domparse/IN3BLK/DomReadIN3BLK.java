@@ -80,7 +80,7 @@ public class DomReadIN3BLK {
 
     }
 
-    // NodeList tartalmának kiírása
+    // NodeList kiírása
     private static void printNodeList(NodeList nodeList, PrintWriter writer) {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
@@ -90,7 +90,7 @@ public class DomReadIN3BLK {
         }
     }
 
-    // Node tartalmának kiírása
+    // Node kiírása
     private static void printNode(Node node, int indent, PrintWriter writer) {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
@@ -130,11 +130,11 @@ public class DomReadIN3BLK {
 
     }
 
-    // Egy segédmetódus, amely egy behúzó sztringet hoz létre
+    // Behúzások hozzáadása
     private static String getIndentString(int indent) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < indent; i++) {
-            // Minden iteráció során két szóközt fűz hozzá a StringBuilderhez.
+            // Minden iteráció során két szóközt fűz hozzá a StringBuilderhez
             sb.append("  ");
         }
         return sb.toString();

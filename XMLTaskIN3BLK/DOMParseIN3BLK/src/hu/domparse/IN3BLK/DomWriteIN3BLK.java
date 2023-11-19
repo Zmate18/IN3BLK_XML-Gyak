@@ -14,84 +14,99 @@ import java.util.StringJoiner;
 
 public class DomWriteIN3BLK {
 
-	public static void main(String[] args) {
-		try {
-			// Dokumentum készítése
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.newDocument();
+    public static void main(String[] args) {
+        try {
+            // Dokumentum elkészítése
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
 
-			// Gyökér elem létrehozása
-			Element rootElement = doc.createElement("IN3BLK_Foglalas");
-			rootElement.setAttribute("xmlns:xs", "http://www.w3.org/2001/XMLSchema-instance");
-			rootElement.setAttribute("xs:noNamespaceSchemaLocation", "XMLSchemaIN3BLK.xsd");
-			doc.appendChild(rootElement);
+            // Gyökér elem létrehozása
+            Element rootElement = doc.createElement("IN3BLK_Foglalas");
+            rootElement.setAttribute("xmlns:xs", "http://www.w3.org/2001/XMLSchema-instance");
+            rootElement.setAttribute("xs:noNamespaceSchemaLocation", "XMLSchemaIN3BLK.xsd");
+            doc.appendChild(rootElement);
 
-			// Szoba létrehozása
-			addSzoba(doc, rootElement, "1", "2", "36000", "Szabad");
-			addSzoba(doc, rootElement, "2", "5", "43000", "Szabad");
+            // Szoba adatok hozzáadása
+            addSzoba(doc, rootElement, "1", "2", "36000", "Szabad");
+            addSzoba(doc, rootElement, "2", "5", "43000", "Szabad");
             addSzoba(doc, rootElement, "3", "1", "31000", "Foglalt");
-			
-            // Alkalmazott létrehozása
-            addAlkalmazott(doc, rootElement,"1", "1", "Tóth András", Arrays.asList("06-70-938-5617"), "320000", "Portás");
-            addAlkalmazott(doc, rootElement, "2", "2", "Lakatos Kevin", Arrays.asList("06-30-294-7335", "06-20-993-3744"), "390000", "Szakács");
-            addAlkalmazott(doc, rootElement, "3", "3", "Szabó Ilona", Arrays.asList("06-70-223-9485"), "280000", "Takarító");
 
-            // Hotel létrehozása
-            addHotel(doc, rootElement, "1", "1", "Kényelem Hotel", Arrays.asList("06-20-993-7766"), "1028", "Budapest", "Szeles utca 25", "3");
-            addHotel(doc, rootElement, "2", "2", "Royal Hotel", Arrays.asList("06-70-234-3443"), "4033", "Debrecen", "Erdei utca 6", "5");
-            addHotel(doc, rootElement, "3", "3", "Udvari Hotel", Arrays.asList("06-30-345-2345", "06-30-999-2384"), "3521", "Miskolc", "Jakab utca 56", "4");
+            // Alkalmazott adatok hozzáadása
+            addAlkalmazott(doc, rootElement, "1", "1", "Tóth András", Arrays.asList("06-70-938-5617"), "320000",
+                    "Portás");
+            addAlkalmazott(doc, rootElement, "2", "2", "Lakatos Kevin",
+                    Arrays.asList("06-30-294-7335", "06-20-993-3744"), "390000", "Szakács");
+            addAlkalmazott(doc, rootElement, "3", "3", "Szabó Ilona", Arrays.asList("06-70-223-9485"), "280000",
+                    "Takarító");
 
-            // Számla létrehozása
+            // Hotel adatok hozzáadása
+            addHotel(doc, rootElement, "1", "1", "Kényelem Hotel", Arrays.asList("06-20-993-7766"), "1028", "Budapest",
+                    "Szeles utca 25", "3");
+            addHotel(doc, rootElement, "2", "2", "Royal Hotel", Arrays.asList("06-70-234-3443"), "4033", "Debrecen",
+                    "Erdei utca 6", "5");
+            addHotel(doc, rootElement, "3", "3", "Udvari Hotel", Arrays.asList("06-30-345-2345", "06-30-999-2384"),
+                    "3521", "Miskolc", "Jakab utca 56", "4");
+
+            // Számla adatok hozzáadása
             addSzamla(doc, rootElement, "1", "1", "Kiss Anna", "2020-02-17", "86000");
             addSzamla(doc, rootElement, "2", "2", "Török András", "2021-09-10", "113000");
             addSzamla(doc, rootElement, "3", "3", "Horváth Áron", "2022-05-14", "93000");
 
-            // Vevő létrehozása
-            addVevo(doc, rootElement, "1", "1", "Kiss Anna", Arrays.asList("06-30-222-2345", "06-70-399-5577"), "kAnna@gmail.com");
-            addVevo(doc, rootElement, "2", "2", "Török András", Arrays.asList("06-20-948-3857", "06-30-9475872"), "tAndras@freemail.hu");
+            // Vevő adatok hozzáadása
+            addVevo(doc, rootElement, "1", "1", "Kiss Anna", Arrays.asList("06-30-222-2345", "06-70-399-5577"),
+                    "kAnna@gmail.com");
+            addVevo(doc, rootElement, "2", "2", "Török András", Arrays.asList("06-20-948-3857", "06-30-9475872"),
+                    "tAndras@freemail.hu");
             addVevo(doc, rootElement, "3", "3", "Horváth Áron", Arrays.asList("06-70-993-6665"), "hAron@gmail.com");
 
-            // Foglalás létrehozása
+            // Foglalás adatok hozzáadása
             addFoglalas(doc, rootElement, "1", "1", "2020-02-10", "2020-02-17");
             addFoglalas(doc, rootElement, "2", "2", "2021-09-03", "2021-09-10");
             addFoglalas(doc, rootElement, "3", "3", "2022-05-10", "2022-05-14");
 
-            // Fizetés létrehozása
+            // Fizetés adatok hozzáadása
             addFizetes(doc, rootElement, "1", "1", "2020-02-17", "Készpénz");
             addFizetes(doc, rootElement, "2", "2", "2021-09-10", "Bankkártya");
             addFizetes(doc, rootElement, "3", "3", "2022-05-14", "Bankkártya");
 
-			// Dokumentum mentése
-			TransformerFactory transformerFactory = TransformerFactory.newInstance();
-			Transformer transformer = transformerFactory.newTransformer();
-			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty("{https://xml.apache.org/xslt}indent-amount", "2");
+            // Dokumentum mentése
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{https://xml.apache.org/xslt}indent-amount", "2");
 
-			printDocument(doc);
+            printDocument(doc);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-    private static void addSzoba(Document doc, Element rooElement, String sz_kod, String emelet, String ar, String szabad) {
-		Element szoba = doc.createElement("Szoba");
-		szoba.setAttribute("sz_kod", sz_kod);
+    private static void addSzoba(Document doc, Element rooElement, String sz_kod, String emelet, String ar,
+            String szabad) {
+        // Szoba elem létrehozása
+        Element szoba = doc.createElement("Szoba");
+        // Szoba elem attribútumainak beállítása
+        szoba.setAttribute("sz_kod", sz_kod);
 
-		Element emeletElement = createElement(doc, "Emelet", emelet);
-		Element arElement = createElement(doc, "Ar", ar);
-		Element szabadElement = createElement(doc, "Szabad", szabad);
+        // Szoba elem gyerek elemeinek létrehozása
+        Element emeletElement = createElement(doc, "Emelet", emelet);
+        Element arElement = createElement(doc, "Ar", ar);
+        Element szabadElement = createElement(doc, "Szabad", szabad);
 
-		szoba.appendChild(emeletElement);
-		szoba.appendChild(arElement);
-		szoba.appendChild(szabadElement);
+        // Szoba elem gyerek elemeinek hozzáadása
+        szoba.appendChild(emeletElement);
+        szoba.appendChild(arElement);
+        szoba.appendChild(szabadElement);
 
-		rooElement.appendChild(szoba);
-	}
+        // Szoba elem hozzáadása a gyökér elemhez
+        rooElement.appendChild(szoba);
+    }
 
-    private static void addAlkalmazott(Document doc, Element rooElement, String a_kod, String h_kod, String nev, List<String> telefonok, String ber, String beosztas) {
+    private static void addAlkalmazott(Document doc, Element rooElement, String a_kod, String h_kod, String nev,
+            List<String> telefonok, String ber, String beosztas) {
         Element alkalmazott = doc.createElement("Alkalmazott");
         alkalmazott.setAttribute("a_kod", a_kod);
         alkalmazott.setAttribute("h_kod", h_kod);
@@ -111,7 +126,8 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(alkalmazott);
     }
 
-    private static void addHotel(Document doc, Element rooElement, String h_kod, String sz_kod, String nev, List<String> telefonok, String irszam, String varos, String utca_hazszam, String ertekeles) {
+    private static void addHotel(Document doc, Element rooElement, String h_kod, String sz_kod, String nev,
+            List<String> telefonok, String irszam, String varos, String utca_hazszam, String ertekeles) {
         Element hotel = doc.createElement("Hotel");
         hotel.setAttribute("h_kod", h_kod);
         hotel.setAttribute("sz_kod", sz_kod);
@@ -140,7 +156,8 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(hotel);
     }
 
-    private static void addSzamla(Document doc, Element rooElement, String szam_kod, String v_kod, String nev, String datum, String osszeg) {
+    private static void addSzamla(Document doc, Element rooElement, String szam_kod, String v_kod, String nev,
+            String datum, String osszeg) {
         Element szamla = doc.createElement("Szamla");
         szamla.setAttribute("szam_kod", szam_kod);
         szamla.setAttribute("v_kod", v_kod);
@@ -156,7 +173,8 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(szamla);
     }
 
-    private static void addVevo(Document doc, Element rooElement, String v_kod, String sz_kod, String nev, List<String> telefonok, String email) {
+    private static void addVevo(Document doc, Element rooElement, String v_kod, String sz_kod, String nev,
+            List<String> telefonok, String email) {
         Element vevo = doc.createElement("Vevo");
         vevo.setAttribute("v_kod", v_kod);
         vevo.setAttribute("sz_kod", sz_kod);
@@ -174,7 +192,8 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(vevo);
     }
 
-    private static void addFoglalas(Document doc, Element rooElement, String sz_kod, String v_kod, String kezdet, String vege) {
+    private static void addFoglalas(Document doc, Element rooElement, String sz_kod, String v_kod, String kezdet,
+            String vege) {
         Element foglalas = doc.createElement("Foglalas");
         foglalas.setAttribute("sz_kod", sz_kod);
         foglalas.setAttribute("v_kod", v_kod);
@@ -188,7 +207,8 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(foglalas);
     }
 
-    private static void addFizetes(Document doc, Element rooElement, String v_kod, String szam_kod, String datum, String fizetesmod) {
+    private static void addFizetes(Document doc, Element rooElement, String v_kod, String szam_kod, String datum,
+            String fizetesmod) {
         Element fizetes = doc.createElement("Fizetes");
         fizetes.setAttribute("v_kod", v_kod);
         fizetes.setAttribute("szam_kod", szam_kod);
@@ -202,6 +222,7 @@ public class DomWriteIN3BLK {
         rooElement.appendChild(fizetes);
     }
 
+    // Dokumentum kiírása
     private static void printDocument(Document doc) {
         try {
             // Mentés fájlba
@@ -266,7 +287,7 @@ public class DomWriteIN3BLK {
         }
     }
 
-	// NodeList tartalmának kiírása
+    // NodeList kiírása
     private static void printNodeList(NodeList nodeList, PrintWriter writer) {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
@@ -276,7 +297,7 @@ public class DomWriteIN3BLK {
         }
     }
 
-    // Node tartalmának kiírása
+    // Node kiírása
     private static void printNode(Node node, int indent, PrintWriter writer) {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
@@ -316,15 +337,17 @@ public class DomWriteIN3BLK {
 
     }
 
-	private static Element createElement(Document doc, String name, String value) {
-		Element element = doc.createElement(name);
-		element.appendChild(doc.createTextNode(value));
-		return element;
-	}
+    private static Element createElement(Document doc, String name, String value) {
+        Element element = doc.createElement(name);
+        element.appendChild(doc.createTextNode(value));
+        return element;
+    }
 
-	private static String getIndentString(int indent) {
+    // Behúzások létrehozása
+    private static String getIndentString(int indent) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < indent; i++) {
+            // Minden iteráció során két szóközt fűz hozzá a StringBuilderhez
             sb.append("  ");
         }
         return sb.toString();
