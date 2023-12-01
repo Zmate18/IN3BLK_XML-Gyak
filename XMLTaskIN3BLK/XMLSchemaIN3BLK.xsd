@@ -7,41 +7,41 @@
     <xs:element name="Ar" type="xs:integer" />
     <xs:element name="Szabad" type="xs:string" />
     <xs:element name="Nev" type="xs:string" />
-    <xs:element name="Telefon" type="TelefonszamTipus" />
+    <xs:element name="Telefon" type="telefonszamTipus" />
     <xs:element name="Ber" type="xs:integer" />
     <xs:element name="Beosztas" type="xs:string" />
     <xs:element name="Cim" type="xs:string" />
-    <xs:element name="Irszam" type="IranyitoszamTipus" />
+    <xs:element name="Irszam" type="iranyitoszamTipus" />
     <xs:element name="Varos" type="xs:string" />
     <xs:element name="Utca-hazszam" type="xs:string" />
     <xs:element name="Ertekeles" type="xs:integer" />
-    <xs:element name="Kezdet" type="DatumTipus" />
-    <xs:element name="Vege" type="DatumTipus" />
-    <xs:element name="Datum" type="DatumTipus" />
+    <xs:element name="Kezdet" type="datumTipus" />
+    <xs:element name="Vege" type="datumTipus" />
+    <xs:element name="Datum" type="datumTipus" />
     <xs:element name="Fizetesmod" type="xs:string" />
     <xs:element name="Osszeg" type="xs:integer" />
     <xs:element name="Email" type="xs:string" />
 
-    <xs:simpleType name="TelefonszamTipus">
+    <xs:simpleType name="telefonszamTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="\d{2}-\d{2}-\d{3}-\d{4}" />
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="IranyitoszamTipus">
+    <xs:simpleType name="iranyitoszamTipus">
         <xs:restriction base="xs:integer">
             <xs:pattern value="\d{4}" />
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="DatumTipus">
+    <xs:simpleType name="datumTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="\d{4}-\d{2}-\d{2}" />
         </xs:restriction>
     </xs:simpleType>
 
     <!-- Komplex típusok -->
-    <xs:complexType name="SzobaTipus">
+    <xs:complexType name="szobaTipus">
         <xs:sequence>
             <xs:element name="Emelet" type="xs:integer" />
             <xs:element name="Ar" type="xs:integer" />
@@ -50,7 +50,7 @@
         <xs:attribute name="sz_kod" type="xs:integer" />
     </xs:complexType>
 
-    <xs:complexType name="AlkalmazottTipus">
+    <xs:complexType name="alkalmazottTipus">
         <xs:sequence>
             <xs:element name="Nev" type="xs:string" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
@@ -59,7 +59,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="HotelTipus">
+    <xs:complexType name="hotelTipus">
         <xs:sequence>
             <xs:element ref="Nev" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
@@ -75,7 +75,7 @@
         <xs:attribute name="sz_kod" type="xs:integer" />
     </xs:complexType>
 
-    <xs:complexType name="SzamlaTipus">
+    <xs:complexType name="szamlaTipus">
         <xs:sequence>
             <xs:element ref="Nev" />
             <xs:element ref="Datum" />
@@ -85,7 +85,7 @@
         <xs:attribute name="v_kod" type="xs:integer" />
     </xs:complexType>
 
-    <xs:complexType name="VevoTipus">
+    <xs:complexType name="vevoTipus">
         <xs:sequence>
             <xs:element ref="Nev" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
@@ -95,7 +95,7 @@
         <xs:attribute name="sz_kod" type="xs:integer" />
     </xs:complexType>
 
-    <xs:complexType name="FoglalasTipus">
+    <xs:complexType name="foglalasTipus">
         <xs:sequence>
             <xs:element ref="Kezdet" />
             <xs:element ref="Vege" />
@@ -104,7 +104,7 @@
         <xs:attribute name="v_kod" type="xs:integer" />
     </xs:complexType>
 
-    <xs:complexType name="FizetesTipus">
+    <xs:complexType name="fizetesTipus">
         <xs:sequence>
             <xs:element ref="Datum" />
             <xs:element ref="Fizetesmod" />
@@ -117,13 +117,13 @@
     <xs:element name="IN3BLK_Foglalas">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Hotel" type="HotelTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Szoba" type="SzobaTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Alkalmazott" type="AlkalmazottTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Szamla" type="SzamlaTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Vevo" type="VevoTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Foglalas" type="FoglalasTipus" minOccurs="0" maxOccurs="unbounded" />
-                <xs:element name="Fizetes" type="FizetesTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Hotel" type="hotelTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Szoba" type="szobaTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Alkalmazott" type="alkalmazottTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Szamla" type="szamlaTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Vevo" type="vevoTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Foglalas" type="foglalasTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Fizetes" type="fizetesTipus" minOccurs="0" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
 

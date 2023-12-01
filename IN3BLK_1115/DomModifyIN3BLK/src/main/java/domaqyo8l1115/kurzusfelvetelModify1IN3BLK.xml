@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AQYO8L_kurzusfelvetel egyetem="ME" tanev="2023_2024 I.">
+      
+    <hallgato id="AQYO8L">
+            
+        <hnev>Zavarkó Máté</hnev>
+            
+        <szulev>2002-02-18</szulev>
+            
+        <szak evf="5"> Gazdaságinformatikus </szak>
+          
+    </hallgato>
+      
+    <kurzusok>
+            
+        <kurzus id="GTÜPZ121B-B">
+                  
+            <kurzusnev>Pénzügytan</kurzusnev>
+                  
+            <kredit>4</kredit>
+                  
+            <hely>XXXVII</hely>
+                  
+            <idopont>Szerda 10:00-11:30</idopont>
+                  
+            <oktato>Dr. Bozsik sándor</oktato>
+
+        </kurzus>
+            
+        <kurzus id="GEIAL331-B" nyelv="angol">
+
+            <kurzusnev>WEB technológiák 1</kurzusnev>
+
+            <kredit>5</kredit>
+
+            <hely>A1. 305</hely>
+
+            <idopont>Hétfő 14:00-15:30</idopont>
+
+            <oktato>Agárdi Anita</oktato>
+
+        </kurzus>
+            
+        <kurzus id="GEIAL315-B">
+
+            <kurzusnev>Vállalit Információs Rendszerek Fejlesztése</kurzusnev>
+
+            <kredit>5</kredit>
+
+            <hely>In. 103</hely>
+
+            <idopont>Szerda 14:00-15:30</idopont>
+
+            <oktato>Dr. Sasvári Péter</oktato>
+
+        </kurzus>
+
+        <kurzus id="GTÜSZ601B-B" jovahagyas="igen">
+
+            <kurzusnev>Számvitel</kurzusnev>
+
+            <kredit>4</kredit>
+
+            <hely>A1. 115</hely>
+
+            <idopont>Kedd 8:00-9:30</idopont>
+
+            <oktato>Dr. Pál Tibor</oktato>
+
+        </kurzus>
+
+        <kurzus id="GEIAK130-B">
+
+            <kurzusnev>Mesterséges intelligencia alapok</kurzusnev>
+
+            <kredit>5</kredit>
+
+            <hely>XXXII</hely>
+
+            <idopont>Kedd 10:00-11:30</idopont>
+
+            <oktato>Kunné Dr. Tamás Judit</oktato>
+
+            <oraado>Fazekas Levente</oraado>
+
+        </kurzus>
+
+        <kurzus id="GEIAL332-B">
+
+            <kurzusnev>Adatkezelés XML környezetben</kurzusnev>
+
+            <kredit>5</kredit>
+
+            <hely>XXXII</hely>
+
+            <idopont>Kedd 12:00-13:30</idopont>
+
+            <oktato>Dr. Bednarik László</oktato>
+            
+        </kurzus>
+          
+    </kurzusok>
+    
+</AQYO8L_kurzusfelvetel>

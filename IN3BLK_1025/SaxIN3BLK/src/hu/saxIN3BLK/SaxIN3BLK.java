@@ -8,7 +8,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-@SuppressWarnings("unused")
 public class SaxIN3BLK {
 	
 	public static void main(String[] args) {
@@ -21,7 +20,7 @@ public class SaxIN3BLK {
 
 			SaxHandler handler = new SaxHandler();
 
-			saxParser.parse(new File("ZM_kurzusfelvetel.xml"), handler);
+			saxParser.parse(new File("IN3BLK_kurzusfelvetel.xml"), handler);
 
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 
