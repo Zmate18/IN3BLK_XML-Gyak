@@ -10,13 +10,13 @@ public class xPathIN3BLK {
 	public static void main(String[] args) {
 		try {
 			File inputFile = new File("studentIN3BLK.xml");
-			// Dokumentum elk�sz�t�se
+			// Dokumentum elkészítése
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document doc = builder.parse(inputFile);
 			doc.getDocumentElement().normalize();
 
-			// xPath k�sz�t�se
+			// xPath készítése
 			XPath xPath = XPathFactory.newInstance().newXPath();
 
 			System.out.println("1.");
@@ -83,19 +83,19 @@ public class xPathIN3BLK {
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
 
-			System.out.println("\nAktu�lis elem: " + node.getNodeName());
+			System.out.println("\nAktuális elem: " + node.getNodeName());
 
 			if (node.getNodeType() == Node.ELEMENT_NODE && node.getNodeName().equals("student")) {
 				Element element = (Element) node;
 
-				System.out.println("Hallgat� ID: " + element.getAttribute("id"));
+				System.out.println("Hallgató ID: " + element.getAttribute("id"));
 
 				System.out
-						.println("Vezet�kn�v: " + element.getElementsByTagName("vezeteknev").item(0).getTextContent());
+						.println("Vezetéknév: " + element.getElementsByTagName("vezeteknev").item(0).getTextContent());
 				System.out
-						.println("Keresztn�v: " + element.getElementsByTagName("keresztnev").item(0).getTextContent());
+						.println("Keresztnév: " + element.getElementsByTagName("keresztnev").item(0).getTextContent());
 
-				System.out.println("Becen�v : " + element.getElementsByTagName("becenev").item(0).getTextContent());
+				System.out.println("Becenév : " + element.getElementsByTagName("becenev").item(0).getTextContent());
 
 				System.out.println("Kor : " + element.getElementsByTagName("kor").item(0).getTextContent());
 
