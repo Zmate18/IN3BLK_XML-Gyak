@@ -40,35 +40,54 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="szabadTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Szabad" />
+            <xs:enumeration value="Foglalt" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ertekelesTipus">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+
     <!-- Komplex típusok -->
     <xs:complexType name="szobaTipus">
         <xs:sequence>
-            <xs:element name="Emelet" type="xs:integer" />
-            <xs:element name="Ar" type="xs:integer" />
-            <xs:element name="Szabad" type="xs:string" />
+            <xs:element ref="Emelet" />
+            <xs:element ref="Ar" />
+            <xs:element ref="Szabad" />
         </xs:sequence>
         <xs:attribute name="sz_kod" type="xs:integer" />
     </xs:complexType>
 
     <xs:complexType name="alkalmazottTipus">
         <xs:sequence>
-            <xs:element name="Nev" type="xs:string" />
+            <xs:element ref="Nev" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
-            <xs:element name="Ber" type="xs:integer" />
-            <xs:element name="Beosztas" type="xs:string" />
+            <xs:element ref="Ber" />
+            <xs:element ref="Beosztas" />
         </xs:sequence>
+        <xs:attribute name="a_kod" type="xs:integer" />
+        <xs:attribute name="h_kod" type="xs:integer" />
     </xs:complexType>
 
     <xs:complexType name="hotelTipus">
         <xs:sequence>
             <xs:element ref="Nev" />
             <xs:element ref="Telefon" maxOccurs="unbounded" />
-            <xs:element ref="Cim" />
-                <xs:sequence>
-                    <xs:element ref="Irszam" />
-                    <xs:element ref="Varos" />
-                    <xs:element ref="Utca-hazszam" />
-                </xs:sequence>
+            <xs:element name="Cim">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="Irszam" />
+                        <xs:element ref="Varos" />
+                        <xs:element ref="Utca-hazszam" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element ref="Ertekeles" />
         </xs:sequence>
         <xs:attribute name="h_kod" type="xs:integer" />
@@ -117,9 +136,9 @@
     <xs:element name="IN3BLK_Foglalas">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Hotel" type="hotelTipus" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="Szoba" type="szobaTipus" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="Alkalmazott" type="alkalmazottTipus" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="Hotel" type="hotelTipus" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="Szamla" type="szamlaTipus" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="Vevo" type="vevoTipus" minOccurs="0" maxOccurs="unbounded" />
                 <xs:element name="Foglalas" type="foglalasTipus" minOccurs="0" maxOccurs="unbounded" />
@@ -151,16 +170,6 @@
         <xs:key name="VevoPK">
             <xs:selector xpath="Vevo" />
             <xs:field xpath="@v_kod" />
-        </xs:key>
-        
-        <xs:key name="FoglalasPK">
-            <xs:selector xpath="Foglalas" />
-            <xs:field xpath="@f_kod" />
-        </xs:key>
-
-        <xs:key name="FizetesPK">
-            <xs:selector xpath="Fizetes" />
-            <xs:field xpath="@fiz_kod" />
         </xs:key>
 
         <!-- Idegen kulcsok -->
