@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <IN3BLK_Foglalas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaIN3BLK.xsd"> 
 
   <Szoba sz_kod="1">
@@ -21,10 +21,10 @@
 
 
   <Alkalmazott a_kod="1" h_kod="1">
-    <Nev >T√≥th Andr√°s</Nev>
+    <Nev >TÛth Andr·s</Nev>
     <Telefon >06-70-938-5617</Telefon>
     <Ber >320000</Ber>
-    <Beosztas >Port√°s</Beosztas>
+    <Beosztas >Port·s</Beosztas>
   </Alkalmazott>
 
   <Alkalmazott a_kod="2" h_kod="2">
@@ -32,19 +32,19 @@
     <Telefon >06-30-294-7335</Telefon>
     <Telefon >06-20-993-3744</Telefon>
     <Ber >390000</Ber>
-    <Beosztas >Szak√°cs</Beosztas>
+    <Beosztas >Szak·cs</Beosztas>
   </Alkalmazott>
 
   <Alkalmazott a_kod="3" h_kod="3">
-    <Nev >Szab√≥ Ilona</Nev>
+    <Nev >SzabÛ Ilona</Nev>
     <Telefon >06-70-223-9485</Telefon>
     <Ber >280000</Ber>
-    <Beosztas >Takar√≠t√≥</Beosztas>
+    <Beosztas >TakarÌtÛ</Beosztas>
   </Alkalmazott>
 
 
   <Hotel h_kod="1" sz_kod="1">
-    <Nev >K√©nyelem Hotel</Nev>
+    <Nev >KÈnyelem Hotel</Nev>
     <Telefon >06-20-993-7766</Telefon>
     <Cim >
       <Irszam >1028</Irszam>
@@ -85,13 +85,13 @@
   </Szamla>
 
   <Szamla szam_kod="2" v_kod="2">
-    <Nev >T√∂r√∂k Andr√°s</Nev>
+    <Nev >Tˆrˆk Andr·s</Nev>
     <Datum >2021-09-10</Datum>
     <Osszeg >113000</Osszeg>
   </Szamla>
 
   <Szamla szam_kod="3" v_kod="3">
-    <Nev >Horv√°th √Åron</Nev>
+    <Nev >Horv·th ¡ron</Nev>
     <Datum >2022-05-14</Datum>
     <Osszeg >93000</Osszeg>
   </Szamla>
@@ -105,14 +105,14 @@
   </Vevo>
 
   <Vevo sz_kod="2" v_kod="2">
-    <Nev >T√∂r√∂k Andr√°s</Nev>
+    <Nev >Tˆrˆk Andr·s</Nev>
     <Telefon >06-20-948-3857</Telefon>
-    <Telefon >06-30-9475872</Telefon>
+    <Telefon >06-30-947-5872</Telefon>
     <Email >tAndras@freemail.hu</Email>
   </Vevo>
 
   <Vevo sz_kod="3" v_kod="3">
-    <Nev >Horv√°th √Åron</Nev>
+    <Nev >Horv·th ¡ron</Nev>
     <Telefon >06-70-993-6665</Telefon>
     <Email >hAron@gmail.com</Email>
   </Vevo>
@@ -136,15 +136,17 @@
 
   <Fizetes szam_kod="1" v_kod="1">
     <Datum >2020-02-17</Datum>
-    <Fizetesmod >K√©szp√©nz</Fizetesmod>
+    <Fizetesmod >KÈszpÈnz</Fizetesmod>
   </Fizetes>
 
   <Fizetes szam_kod="2" v_kod="2">
     <Datum >2021-09-10</Datum>
-    <Fizetesmod >Bankk√°rtya</Fizetesmod>
+    <Fizetesmod >Bankk·rtya</Fizetesmod>
   </Fizetes>
 
   <Fizetes szam_kod="3" v_kod="3">
     <Datum >2022-05-14</Datum>
-    <Fizetesmod >Bankk√°rtya</Fizetesmod>
+    <Fizetesmod >Bankk·rtya</Fizetesmod>
   </Fizetes>
+
+</IN3BLK_Foglalas>

@@ -32,8 +32,8 @@ public class DomReadIN3BLK {
                 rootAttributes.add(attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
             }
 
-            System.out.print("<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n");
-            writer.print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+            System.out.print("<?xml version=\"1.0\" encoding=\"utf-8\"?> \n");
+            writer.print("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
 
             System.out.print("<" + rootName + " " + rootAttributes.toString() + "> \n");
             writer.print("<" + rootName + " " + rootAttributes.toString() + "> \n");

@@ -22,9 +22,9 @@
 
   <Alkalmazott a_kod="1" h_kod="1">
     <Telefon >06-70-938-5617</Telefon>
-    <Nev >Tï¿½th Andrï¿½s</Nev>
+    <Nev >Tóth András</Nev>
     <Ber >320000</Ber>
-    <Beosztas >Portï¿½s</Beosztas>
+    <Beosztas >Portás</Beosztas>
   </Alkalmazott>
 
   <Alkalmazott a_kod="2" h_kod="2">
@@ -32,20 +32,20 @@
     <Telefon >06-20-993-3744</Telefon>
     <Nev >Lakatos Kevin</Nev>
     <Ber >390000</Ber>
-    <Beosztas >Szakï¿½cs</Beosztas>
+    <Beosztas >Szakács</Beosztas>
   </Alkalmazott>
 
   <Alkalmazott a_kod="3" h_kod="3">
     <Telefon >06-70-223-9485</Telefon>
-    <Nev >Szabï¿½ Ilona</Nev>
+    <Nev >Szabó Ilona</Nev>
     <Ber >280000</Ber>
-    <Beosztas >Takarï¿½tï¿½</Beosztas>
+    <Beosztas >Takarító</Beosztas>
   </Alkalmazott>
 
 
   <Hotel h_kod="1" sz_kod="1">
     <Telefon >06-20-993-7766</Telefon>
-    <Nev >Kï¿½nyelem Hotel</Nev>
+    <Nev >Kényelem Hotel</Nev>
     <Cim >
       <Irszam >1028</Irszam>
       <Varos >Budapest</Varos>
@@ -85,13 +85,13 @@
   </Szamla>
 
   <Szamla szam_kod="2" v_kod="2">
-    <Nev >Tï¿½rï¿½k Andrï¿½s</Nev>
+    <Nev >Török András</Nev>
     <Datum >2021-09-10</Datum>
     <Osszeg >113000</Osszeg>
   </Szamla>
 
   <Szamla szam_kod="3" v_kod="3">
-    <Nev >Horvï¿½th ï¿½ron</Nev>
+    <Nev >Horváth Áron</Nev>
     <Datum >2022-05-14</Datum>
     <Osszeg >93000</Osszeg>
   </Szamla>
@@ -106,14 +106,14 @@
 
   <Vevo sz_kod="2" v_kod="2">
     <Telefon >06-20-948-3857</Telefon>
-    <Telefon >06-30-9475872</Telefon>
-    <Nev >Tï¿½rï¿½k Andrï¿½s</Nev>
+    <Telefon >06-30-947-5872</Telefon>
+    <Nev >Török András</Nev>
     <Email >tAndras@freemail.hu</Email>
   </Vevo>
 
   <Vevo sz_kod="3" v_kod="3">
     <Telefon >06-70-993-6665</Telefon>
-    <Nev >Horvï¿½th ï¿½ron</Nev>
+    <Nev >Horváth Áron</Nev>
     <Email >hAron@gmail.com</Email>
   </Vevo>
 
@@ -136,17 +136,17 @@
 
   <Fizetes szam_kod="1" v_kod="1">
     <Datum >2020-02-17</Datum>
-    <Fizetesmod >Kï¿½szpï¿½nz</Fizetesmod>
+    <Fizetesmod >Készpénz</Fizetesmod>
   </Fizetes>
 
   <Fizetes szam_kod="2" v_kod="2">
     <Datum >2021-09-10</Datum>
-    <Fizetesmod >Bankkï¿½rtya</Fizetesmod>
+    <Fizetesmod >Bankkártya</Fizetesmod>
   </Fizetes>
 
   <Fizetes szam_kod="3" v_kod="3">
     <Datum >2022-05-14</Datum>
-    <Fizetesmod >Bankkï¿½rtya</Fizetesmod>
+    <Fizetesmod >Bankkártya</Fizetesmod>
   </Fizetes>
 
 </IN3BLK_Foglalas>

@@ -56,7 +56,7 @@ public class DomWriteIN3BLK {
             // Vevő adatok hozzáadása
             addVevo(doc, rootElement, "1", "1", "Kiss Anna", Arrays.asList("06-30-222-2345", "06-70-399-5577"),
                     "kAnna@gmail.com");
-            addVevo(doc, rootElement, "2", "2", "Török András", Arrays.asList("06-20-948-3857", "06-30-9475872"),
+            addVevo(doc, rootElement, "2", "2", "Török András", Arrays.asList("06-20-948-3857", "06-30-947-5872"),
                     "tAndras@freemail.hu");
             addVevo(doc, rootElement, "3", "3", "Horváth Áron", Arrays.asList("06-70-993-6665"), "hAron@gmail.com");
 
