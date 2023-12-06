@@ -1,0 +1,175 @@
+{
+    "IN3BLK_orarend": {
+        "ora": [
+            {
+                "id": "1",
+                "tipus": "elmelet",
+                "targy": "Pénzügytan",
+                "idopont": {
+                    "nap": "Hétfő",
+                    "tol": "10:00",
+                    "ig": "11:30"
+                },
+                "helyszin": "XXXVII",
+                "oktato": "Dr. Bozsik Sándor",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "2",
+                "tipus": "elmelet",
+                "targy": "WEB_Technológiák_I",
+                "idopont": {
+                    "nap": "Hétfő",
+                    "tol": "14:00",
+                    "ig": "15:30"
+                },
+                "helyszin": "A1/305",
+                "oktato": "Agárdi Anita",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "3",
+                "tipus": "gyakorlat",
+                "targy": "WEB_Technológiák_I",
+                "idopont": {
+                    "nap": "Hétfő",
+                    "tol": "16:00",
+                    "ig": "17:30"
+                },
+                "helyszin": "In/103",
+                "oktato": "Agárdi Anita",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "4",
+                "tipus": "elmélet",
+                "targy": "Számvitel",
+                "idopont": {
+                    "nap": "Kedd",
+                    "tol": "8:00",
+                    "ig": "9:30"
+                },
+                "helyszin": "A1/115",
+                "oktato": "Dr. Pál Tibor",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "5",
+                "tipus": "elmelet",
+                "targy": "Mesterséges intelligencia alapok",
+                "idopont": {
+                    "nap": "Kedd",
+                    "tol": "10:00",
+                    "ig": "11:30"
+                },
+                "helyszin": "XXXII",
+                "oktato": "Fazekas Levente Áron",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "6",
+                "tipus": "elmelet",
+                "targy": "Adatkezelés XML-ben",
+                "idopont": {
+                    "nap": "Kedd",
+                    "tol": "12:00",
+                    "ig": "13:30"
+                },
+                "helyszin": "XXXII",
+                "oktato": "Dr. Bednarik László",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "7",
+                "tipus": "gyakorlat",
+                "targy": "Pénzügytan",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "8:00",
+                    "ig": "9:30"
+                },
+                "helyszin": "A1/204",
+                "oktato": "Dr. Süveges Gábor",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "8",
+                "tipus": "gyakorlat",
+                "targy": "Adatkezelés XML-ben",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "10:00",
+                    "ig": "11:30"
+                },
+                "helyszin": "In/102",
+                "oktato": "Dr. Bednarik László",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "9",
+                "tipus": "gyakorlat",
+                "targy": "Számvitel",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "12:00",
+                    "ig": "13:30"
+                },
+                "helyszin": "A3/313",
+                "oktato": "Várkonyiné dr.Juhász Mária",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "10",
+                "tipus": "elmélet",
+                "targy": "Vállalati információs rendszerek fejlesztése",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "14:00",
+                    "ig": "15:30"
+                },
+                "helyszin": "In/101",
+                "oktato": "Dr. Sasvári Péter László",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "11",
+                "tipus": "elmélet",
+                "targy": "Termelésmenedzsment",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "16:00",
+                    "ig": "17:30"
+                },
+                "helyszin": "XXXVII",
+                "oktato": "Dr. Berényi László",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "12",
+                "tipus": "gyakorlat",
+                "targy": "Vállalati információs rendszerek fejlesztése",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": "18:00",
+                    "ig": "19:30"
+                },
+                "helyszin": "In/101",
+                "oktato": "Dr. Sasvári Péter László",
+                "szak": "Gazdaságinformatikus"
+            },
+            {
+                "id": "13",
+                "tipus": "gyakorlat",
+                "targy": "Mesterséges intelligencia alapok",
+                "idopont": {
+                    "nap": "Csütörtök",
+                    "tol": "10:00",
+                    "ig": "11:30"
+                },
+                "helyszin": "A2/I",
+                "oktato": "Fazekas Levente Áron",
+                "szak": "Gazdaságinformatikus"
+            }
+        ]
+    }
+}
